@@ -3,38 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Checkpoint 2 - Device Check</title>
-  <style>
-    body, html {
-      margin: 0; padding: 0;
-      height: 100%;
-      overflow: hidden;
-      font-family: Arial, sans-serif;
-      background: #111;
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
-    #vanta-bg {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100vw; height: 100vh;
-      z-index: -1;
-    }
-    #content {
-      position: relative;
-      z-index: 1;
-      max-width: 400px;
-      width: 90%;
-      background: rgba(0,0,0,0.7);
-      padding: 20px;
-      border-radius: 8px;
-    }
-  </style>
-
+  <title>Device Check</title>
   <script>
+    (function() {
+      const ua = navigator.userAgent.toLowerCase();
+      const isChromebook = /cros|crkey/.test(ua);
+
+      if (isChromebook) {
+        // Chromebook: open nyx-mauve in a new blank tab
+        window.open('about:blank', '_blank').location.href = 'https://nyx-mauve.vercel.app/';
+      } else {
+        // Not Chromebook: open Rickroll in a new blank tab
+        window.open('about:blank', '_blank').location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
+      }
+    })();
+  </script>
+</head>
+<body>
+  <h1>Device Check</h1>
+  <p>If you see this, your device passed the check or popups are blocked.</p>
+</body>
+</html>  <script>
     (function() {
       const ua = navigator.userAgent.toLowerCase();
 
